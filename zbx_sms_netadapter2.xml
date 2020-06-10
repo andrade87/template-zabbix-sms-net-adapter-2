@@ -2527,9 +2527,9 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{SMS 15KVA:upsEstimatedChargeRemaining.last()}&lt;50</expression>
+            <expression>{SMS 15KVA:upsEstimatedChargeRemaining.avg(5m)}&lt;50</expression>
             <recovery_mode>1</recovery_mode>
-            <recovery_expression>{SMS 15KVA:upsEstimatedChargeRemaining.last()}&gt;=50</recovery_expression>
+            <recovery_expression>{SMS 15KVA:upsEstimatedChargeRemaining.avg(5m)}&gt;=50</recovery_expression>
             <name>Bateria &lt; 50% {HOSTNAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
@@ -2559,9 +2559,9 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{SMS 15KVA:upsEstimatedChargeRemaining.last()}&lt;30</expression>
+            <expression>{SMS 15KVA:upsEstimatedChargeRemaining.avg(3m)}&lt;30</expression>
             <recovery_mode>1</recovery_mode>
-            <recovery_expression>{SMS 15KVA:upsEstimatedChargeRemaining.last()}&gt;=30</recovery_expression>
+            <recovery_expression>{SMS 15KVA:upsEstimatedChargeRemaining.avg(3m)}&gt;=30</recovery_expression>
             <name>Bateria Crítica &lt; 30% - Desligar TUDO! {HOSTNAME}</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
